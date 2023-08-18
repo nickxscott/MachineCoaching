@@ -1,113 +1,113 @@
-date,day_code,day_desc,week,phase,weekly_mileage,runs_per_week,distance,run_type,run_desc
-2023-07-31,0,Mon,1,base,21.4,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-01,1,Tues,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-02,2,Wed,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-03,3,Thurs,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-04,4,Fri,1,base,21.4,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-05,5,Sat,1,base,21.4,5,7.1,long run,This is the long run
-2023-08-06,6,Sun,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-07,0,Mon,2,base,30.0,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-08,1,Tues,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-09,2,Wed,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-10,3,Thurs,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-11,4,Fri,2,base,30.0,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-12,5,Sat,2,base,30.0,5,10.0,long run,This is the long run
-2023-08-13,6,Sun,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-14,0,Mon,3,base,38.5,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-15,1,Tues,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-16,2,Wed,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-17,3,Thurs,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-18,4,Fri,3,base,38.5,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-19,5,Sat,3,base,38.5,5,12.9,long run,This is the long run
-2023-08-20,6,Sun,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-21,0,Mon,4,base,47.1,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-08-22,1,Tues,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-23,2,Wed,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-24,3,Thurs,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-25,4,Fri,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-26,5,Sat,4,base,47.1,6,15.8,long run,This is the long run
-2023-08-27,6,Sun,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-28,0,Mon,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-29,1,Tues,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-30,2,Wed,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-08-31,3,Thurs,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-01,4,Fri,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-02,5,Sat,5,base,55.6,7,18.7,long run,This is the long run
-2023-09-03,6,Sun,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-04,0,Mon,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-05,1,Tues,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-06,2,Wed,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-07,3,Thurs,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-08,4,Fri,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-09,5,Sat,6,base,64.2,7,21.6,long run,This is the long run
-2023-09-10,6,Sun,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-11,0,Mon,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-12,1,Tues,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-13,2,Wed,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-14,3,Thurs,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-15,4,Fri,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-16,5,Sat,7,peak,64.2,7,18.3,long run,This is the long run
-2023-09-17,6,Sun,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-18,0,Mon,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-19,1,Tues,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-20,2,Wed,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-21,3,Thurs,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-22,4,Fri,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-23,5,Sat,8,peak,64.2,7,19.4,long run,This is the long run
-2023-09-24,6,Sun,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-25,0,Mon,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-26,1,Tues,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-27,2,Wed,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-28,3,Thurs,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-29,4,Fri,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-09-30,5,Sat,9,peak,64.2,7,20.5,long run,This is the long run
-2023-10-01,6,Sun,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-02,0,Mon,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-03,1,Tues,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-04,2,Wed,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-05,3,Thurs,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-06,4,Fri,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-07,5,Sat,10,peak,64.2,7,21.6,long run,This is the long run
-2023-10-08,6,Sun,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-09,0,Mon,11,down,32.1,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-10-10,1,Tues,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-11,2,Wed,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-12,3,Thurs,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-13,4,Fri,11,down,32.1,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-10-14,5,Sat,11,down,32.1,5,10.7,long run,This is the long run
-2023-10-15,6,Sun,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-16,0,Mon,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-17,1,Tues,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-18,2,Wed,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-19,3,Thurs,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-20,4,Fri,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-21,5,Sat,12,peak,64.2,7,20.5,long run,This is the long run
-2023-10-22,6,Sun,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-23,0,Mon,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-24,1,Tues,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-25,2,Wed,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-26,3,Thurs,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-27,4,Fri,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-28,5,Sat,13,peak,64.2,7,20.5,long run,This is the long run
-2023-10-29,6,Sun,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-10-30,0,Mon,14,taper,54.6,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-10-31,1,Tues,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-01,2,Wed,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-02,3,Thurs,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-03,4,Fri,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-04,5,Sat,14,taper,54.6,6,18.2,long run,This is the long run
-2023-11-05,6,Sun,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-06,0,Mon,15,taper,41.7,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-11-07,1,Tues,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-08,2,Wed,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-09,3,Thurs,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-10,4,Fri,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-11,5,Sat,15,taper,41.7,6,13.9,long run,This is the long run
-2023-11-12,6,Sun,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-13,0,Mon,16,taper,19.3,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-11-14,1,Tues,16,taper,19.3,4,4.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-15,2,Wed,16,taper,19.3,4,4.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-16,3,Thurs,16,taper,19.3,4,4.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.
-2023-11-17,4,Fri,16,taper,19.3,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
-2023-11-18,5,Sat,16,taper,19.3,4,6.4,long run,This is the long run
-2023-11-19,6,Sun,16,taper,19.3,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.
+date,day_code,day_desc,week,phase,weekly_mileage,runs_per_week,distance,run_type,run_desc,run_name
+2023-07-31,0,Mon,1,base,21.4,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-01,1,Tues,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-02,2,Wed,1,base,21.4,5,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m
+2023-08-03,3,Thurs,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-04,4,Fri,1,base,21.4,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-05,5,Sat,1,base,21.4,5,7.1,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-08-06,6,Sun,1,base,21.4,5,3.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-07,0,Mon,2,base,30.0,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-08,1,Tues,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-09,2,Wed,2,base,30.0,5,5.0,workout,1.5 mile warm up followed by 10  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,10 x 1 minute hill sprints
+2023-08-10,3,Thurs,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-11,4,Fri,2,base,30.0,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-12,5,Sat,2,base,30.0,5,10.0,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-08-13,6,Sun,2,base,30.0,5,5.0,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-14,0,Mon,3,base,38.5,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-15,1,Tues,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-16,2,Wed,3,base,38.5,5,6.75,workout,1 mile warm up followd by 10 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,12 x 400
+2023-08-17,3,Thurs,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-18,4,Fri,3,base,38.5,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-19,5,Sat,3,base,38.5,5,12.9,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-08-20,6,Sun,3,base,38.5,5,6.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-21,0,Mon,4,base,47.1,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-08-22,1,Tues,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-23,2,Wed,4,base,47.1,6,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m
+2023-08-24,3,Thurs,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-25,4,Fri,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-26,5,Sat,4,base,47.1,6,15.8,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-08-27,6,Sun,4,base,47.1,6,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-28,0,Mon,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-29,1,Tues,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-08-30,2,Wed,5,base,55.6,7,5.0,workout,1.5 mile warm up followed by 10  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,10 x 1 minute hill sprints
+2023-08-31,3,Thurs,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-01,4,Fri,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-02,5,Sat,5,base,55.6,7,18.7,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-09-03,6,Sun,5,base,55.6,7,6.2,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-04,0,Mon,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-05,1,Tues,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-06,2,Wed,6,base,64.2,7,6.75,workout,1 mile warm up followd by 10 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,12 x 400
+2023-09-07,3,Thurs,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-08,4,Fri,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-09,5,Sat,6,base,64.2,7,21.6,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-09-10,6,Sun,6,base,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-11,0,Mon,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-12,1,Tues,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-13,2,Wed,7,peak,64.2,7,8.0,workout,1 mile warm-up followed by 6 reps of 1k with 90 seconds easy jogging in between reps. Finish with 1 mile cool down.,7 x 1k
+2023-09-14,3,Thurs,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-15,4,Fri,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-16,5,Sat,7,peak,64.2,7,18.3,long_workout,"After a substantial warm-up, complete 3 sets of 5km at goal race pace with a minimum of 5 minutes recovery between sets",3 x 5k at race pace
+2023-09-17,6,Sun,7,peak,64.2,7,7.7,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-18,0,Mon,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-19,1,Tues,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-20,2,Wed,8,peak,64.2,7,7.5,workout,1 mile warm-up followed by 6 reps of 1k with 90 seconds easy jogging in between reps. Finish with 1 mile cool down.,7 x 1k
+2023-09-21,3,Thurs,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-22,4,Fri,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-23,5,Sat,8,peak,64.2,7,19.4,long_workout,"After a substantial warm-up, run 10 miles at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10mi at race pace
+2023-09-24,6,Sun,8,peak,64.2,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-25,0,Mon,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-26,1,Tues,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-27,2,Wed,9,peak,64.2,7,7.25,workout,1 mile warm-up followed by 6 reps of 1k with 90 seconds easy jogging in between reps. Finish with 1 mile cool down.,7 x 1k
+2023-09-28,3,Thurs,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-29,4,Fri,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-09-30,5,Sat,9,peak,64.2,7,20.5,long_workout,"After a substantial warm-up, complete 4 sets of 2mi at goal race pace with a minimum of 3 minutes recovery between sets",4 x 2mi at race pace
+2023-10-01,6,Sun,9,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-02,0,Mon,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-03,1,Tues,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-04,2,Wed,10,peak,64.2,7,8.75,workout,1 mile warm-up followed by 6 reps of 1k with 90 seconds easy jogging in between reps. Finish with 1 mile cool down.,7 x 1k
+2023-10-05,3,Thurs,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-06,4,Fri,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-07,5,Sat,10,peak,64.2,7,21.6,long_workout,"After a substantial warm-up, run 10km at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10k at race pace
+2023-10-08,6,Sun,10,peak,64.2,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-09,0,Mon,11,down,32.1,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-10-10,1,Tues,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-11,2,Wed,11,down,32.1,5,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m
+2023-10-12,3,Thurs,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-13,4,Fri,11,down,32.1,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-10-14,5,Sat,11,down,32.1,5,10.7,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-10-15,6,Sun,11,down,32.1,5,5.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-16,0,Mon,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-17,1,Tues,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-18,2,Wed,12,peak,64.2,7,8.0,workout,1 mile warm-up followd by 3 reps of 2 miles with 2 minutes easy jogging in between. Finish with 1 mile cool down.,3 x 2 mile
+2023-10-19,3,Thurs,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-20,4,Fri,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-21,5,Sat,12,peak,64.2,7,20.5,long_workout,"After a substantial warm-up, complete 3 sets of 5km at goal race pace with a minimum of 5 minutes recovery between sets",3 x 5k at race pace
+2023-10-22,6,Sun,12,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-23,0,Mon,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-24,1,Tues,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-25,2,Wed,13,peak,64.2,7,7.5,workout,1 mile warm-up followd by 3 reps of 2 miles with 2 minutes easy jogging in between. Finish with 1 mile cool down.,3 x 2 mile
+2023-10-26,3,Thurs,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-27,4,Fri,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-28,5,Sat,13,peak,64.2,7,20.5,long_workout,"After a substantial warm-up, run 10 miles at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10mi at race pace
+2023-10-29,6,Sun,13,peak,64.2,7,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-10-30,0,Mon,14,taper,54.6,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-10-31,1,Tues,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-01,2,Wed,14,taper,54.6,6,5.0,workout,1.5 mile warm up followed by 10  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,10 x 1 minute hill sprints
+2023-11-02,3,Thurs,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-03,4,Fri,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-04,5,Sat,14,taper,54.6,6,18.2,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-11-05,6,Sun,14,taper,54.6,6,7.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-06,0,Mon,15,taper,41.7,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-11-07,1,Tues,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-08,2,Wed,15,taper,41.7,6,6.75,workout,1 mile warm up followd by 10 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,12 x 400
+2023-11-09,3,Thurs,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-10,4,Fri,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-11,5,Sat,15,taper,41.7,6,13.9,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-11-12,6,Sun,15,taper,41.7,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-13,0,Mon,16,taper,19.3,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-11-14,1,Tues,16,taper,19.3,4,4.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-15,2,Wed,16,taper,19.3,4,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m
+2023-11-16,3,Thurs,16,taper,19.3,4,4.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day
+2023-11-17,4,Fri,16,taper,19.3,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
+2023-11-18,5,Sat,16,taper,19.3,4,6.4,long run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run
+2023-11-19,6,Sun,16,taper,19.3,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day
