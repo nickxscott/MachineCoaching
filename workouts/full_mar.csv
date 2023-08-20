@@ -1,6 +1,6 @@
 workout_type,name,desc,distance,pace ,phase,dist_level_min,dist_level_max
 workout,8 x 400,1 mile warm up followd by 8 reps of 400m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,5,5k ,base,0,4.99
-workout,12 x 400,1 mile warm up followd by 10 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,6.75,5k ,base,5,10
+workout,12 x 400,1 mile warm up followd by 12 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,6.5,5k ,base,5,10
 workout,4 x 800m,1 mile warm up followd by 4 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,4.5,10k down to 5k,base,0,4.99
 workout,6 x 800m,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,5.75,10k down to 5k,base,5,10
 workout,5 x 1 minute hill sprints,1.5 mile warm up followed by 5  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,4,hmp down to 10k,base,0,4.99
