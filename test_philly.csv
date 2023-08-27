@@ -1,0 +1,85 @@
+date,day_desc,week,phase,distance,run_type,run_name,pace,run_desc
+2023-08-28,Mon,1,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-08-29,Tues,1,base,1.8,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-08-30,Wed,1,base,1.8,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-08-31,Thurs,1,base,1.8,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-01,Fri,1,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-02,Sat,1,base,2.8,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-09-03,Sun,1,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-04,Mon,2,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-05,Tues,2,base,3.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-06,Wed,2,base,3.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-07,Thurs,2,base,3.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-08,Fri,2,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-09,Sat,2,base,4.6,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-09-10,Sun,2,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-11,Mon,3,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-12,Tues,3,base,4.3,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-13,Wed,3,base,4.3,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-14,Thurs,3,base,4.3,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-15,Fri,3,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-16,Sat,3,base,6.5,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-09-17,Sun,3,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-18,Mon,4,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-19,Tues,4,base,4.2,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-20,Wed,4,base,4.2,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-21,Thurs,4,base,4.2,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-22,Fri,4,base,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-23,Sat,4,base,8.3,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-09-24,Sun,4,base,4.2,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-25,Mon,5,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-26,Tues,5,peak,4.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-27,Wed,5,peak,5.5,workout,3 x 1 mile,9'42'' - 10'00'',1 mile warm-up followd by 3 reps of 1 mile with 2 minutes easy jogging in between.  Finish with 1 mile cool down.
+2023-09-28,Thurs,5,peak,4.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-09-29,Fri,5,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-09-30,Sat,5,peak,7.1,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-10-01,Sun,5,peak,4.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-02,Mon,6,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-03,Tues,6,peak,3.9,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-04,Wed,6,peak,6.0,workout,"4 x 800, 4 x 400",9'42'' - 10'00'',1 mile warm-up followd by 4 reps of 800m with 2 minutes easy jogging in between. Then 4 reps of 400m with 90 seconds easy jogging in between. Finish with 1 mile cool down.
+2023-10-05,Thurs,6,peak,3.9,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-06,Fri,6,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-07,Sat,6,peak,7.3,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-10-08,Sun,6,peak,3.9,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-09,Mon,7,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-10,Tues,7,peak,4.0,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-11,Wed,7,peak,5.5,workout,Mile Cutdown,9'42'' - 10'00'',"1 mile warm-up followed by 1 rep of 1 mile with 90 second jog rest, 2 reps of 800m with 60 sec jog rest after each, 4 reps of 400m with 45 second jog rest after each. Finish with 1 mile cool down"
+2023-10-12,Thurs,7,peak,4.0,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-13,Fri,7,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-14,Sat,7,peak,7.6,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-10-15,Sun,7,peak,4.0,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-16,Mon,8,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-17,Tues,8,peak,4.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-18,Wed,8,peak,5.0,workout,4 x 1k,9'42'' - 10'00'',1 mile warm-up followed by 4 reps of 1k with 2 minutes easy jogging in between reps. Finish with 1 mile cool down.
+2023-10-19,Thurs,8,peak,4.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-20,Fri,8,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-21,Sat,8,peak,7.8,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-10-22,Sun,8,peak,4.1,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-23,Mon,9,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-24,Tues,9,peak,3.8,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-25,Wed,9,peak,5.5,workout,3 x 1 mile,9'42'' - 10'00'',1 mile warm-up followd by 3 reps of 1 mile with 2 minutes easy jogging in between.  Finish with 1 mile cool down.
+2023-10-26,Thurs,9,peak,3.8,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-27,Fri,9,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-28,Sat,9,peak,8.1,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-10-29,Sun,9,peak,3.8,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-10-30,Mon,10,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-10-31,Tues,10,peak,3.6,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-11-01,Wed,10,peak,6.0,workout,"4 x 800, 4 x 400",9'42'' - 10'00'',1 mile warm-up followd by 4 reps of 800m with 2 minutes easy jogging in between. Then 4 reps of 400m with 90 seconds easy jogging in between. Finish with 1 mile cool down.
+2023-11-02,Thurs,10,peak,3.6,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-11-03,Fri,10,peak,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-11-04,Sat,10,peak,8.3,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-11-05,Sun,10,peak,3.6,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-11-06,Mon,11,taper,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-11-07,Tues,11,taper,3.6,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-11-08,Wed,11,taper,4.5,workout,4 x 800m,9'42'' - 10'00'',1 mile warm up followd by 4 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down
+2023-11-09,Thurs,11,taper,3.6,easy,Easy Day,15'14'',This run should be easy enough that you could carry on a conversation throughout the run.
+2023-11-10,Fri,11,taper,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-11-11,Sat,11,taper,5.8,long_run,Long Run,15'14'',"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance"
+2023-11-12,Sun,11,taper,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-11-13,Mon,12,taper,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-11-14,Tues,12,taper,2.2,easy,Easy + Strides,15'14'',"The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.                        This will allow you to maintain your top-end fitness as you taper toward race day."
+2023-11-15,Wed,12,taper,4.5,workout,4 x 800m,9'42'' - 10'00'',1 mile warm up followd by 4 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down
+2023-11-16,Thurs,12,taper,2.2,easy,Easy + Strides,15'14'',"The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.                        This will allow you to maintain your top-end fitness as you taper toward race day."
+2023-11-17,Fri,12,taper,0.0,rest,Rest Day,-,This is a rest day. Prioritize relaxation and recovery.
+2023-11-18,Sat,12,taper,2.2,easy,Easy + Strides,15'14'',"The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.                        This will allow you to maintain your top-end fitness as you taper toward race day."
+2023-11-19,Sun,12,taper,6.2,race,Race Day,10'00'',"Race day has arrived! Be patient, stick to your plan, and trust in your training. Good luck!"
