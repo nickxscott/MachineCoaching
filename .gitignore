@@ -3,7 +3,7 @@
 /notebooks/*.jpg
 
 #flask session
-/flask_session
+flask_session/
 
 #environment vars
 *.env
