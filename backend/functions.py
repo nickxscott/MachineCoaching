@@ -1,6 +1,23 @@
 from datetime import datetime, date, timedelta
 import pandas as pd
 import numpy as np
+import pickle
+import random
+
+#athlete level model
+level_fn = '../models/athlete_level.sav'
+level = pickle.load(open(level_fn, 'rb'))
+
+#distance factor model
+dist_fn = '../models/dist_factor.sav'
+dist_model = pickle.load(open(dist_fn, 'rb'))
+
+#longest LR model
+lr_fn = '../models/longest_lr.sav'
+lr_model = pickle.load(open(lr_fn, 'rb'))
+
+#load workouts
+df_workouts = pd.read_csv('../workouts/workouts.csv')
 
 def mins_to_meters(m, s):
     base10_sec = round(s/60, 3)
