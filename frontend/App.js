@@ -1,30 +1,48 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions} from 'react-native';
 import Home from './components/Home'
 import Data from './components/Data'
+import Create from './components/Create'
 import ClassHome from './components/ClassHome';
 import Contants from 'expo-constants'
 
-export default function App() {
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+
+const Stack = createStackNavigator()
+const windowWidth = Dimensions.get('window').width;
+
+function App() {
 
   const name = "Nick"
-
+  
   return (
-    <View style={styles.container}>
-      <Home user = {name}/>
-       {/* <Data/> */}
-      
-    </View>
+      <Stack.Navigator>
+        <Stack.Screen name = "Home" component = {Home}/>
+        <Stack.Screen name = "Training" component = {Create}/>
+      </Stack.Navigator>      
   );
+}
+
+export default() => {
+  return (
+    <NavigationContainer>
+      <App/>
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: Contants.statusBarHeight,
-    padding: 20
+    padding: 10
   },
+  nav: {
+    backgroundColor: 'red',
+    width: 1000
+  }
 });

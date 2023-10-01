@@ -1,14 +1,20 @@
-import React from 'react'
+import React,  {useState, useEffect} from 'react'
 import { StyleSheet, View, Text, Button, FlatList} from 'react-native'
 import { Card, FAB } from 'react-native-paper'
 
 export default function Data() {
 
-  const data = [
-    {id: 1, title: 'first title', body: 'first body'},
-    {id: 2, title: 'second title', body: 'second body'},
-    {id: 3, title: 'third title', body: 'third body'},
-  ]
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+      fetch('http://192.168.1.45:3000/', {
+        method: 'GET'
+      })
+      .then(resp => resp.json())
+      .then(pace => {
+        setData(pace)
+      })
+  }, [])
 
   const renderData = (item) => {
     return (
