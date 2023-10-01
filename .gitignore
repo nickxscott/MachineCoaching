@@ -10,3 +10,6 @@ flask_session/
 
 #venv
 venv/
+
+#notes
+notes.txt
