@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,url_for,flash,jsonify,session,redirect
+from flask import Flask, request, jsonify, session
 from flask_session import Session
 
 #from datetime import datetime, date
@@ -13,7 +13,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def get_cal():
     result = get_calendar(race_year=2023, race_month=11, race_day=19, weeks=16, pace_min=7, pace_sec=10, race_dist=26.2)
     raw_level = result[1]
@@ -23,7 +23,12 @@ def get_cal():
     hmp = pace_to_str(result[8])
     ten_k = pace_to_str(result[7])
     five_k = pace_to_str(result[6])
-    return mp
+    return jsonify(mp)
+
+@app.route('/api', methods=['GET','POST'])
+def test():
+    x = request.json['year']
+    return jsonify(x)
 
 
 if __name__ == '__main__':

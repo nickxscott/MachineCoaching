@@ -5,6 +5,7 @@ import Data from './components/Data'
 import Create from './components/Create'
 import ClassHome from './components/ClassHome';
 import Contants from 'expo-constants'
+import HttpExample from './components/Plan';
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'

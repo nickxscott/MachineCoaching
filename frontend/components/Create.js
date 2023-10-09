@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { View, Text, StyleSheet, Pressable} from 'react-native'
-import {TextInput, Button} from 'react-native-paper'
+import {TextInput, Button} from 'react-native-paper';
 
 function Create(props) {
     const[year, setYear] =  useState("")
@@ -12,18 +12,15 @@ function Create(props) {
     const[dist, setDist] =  useState("")
 
     const createPlan = () => {
-        fetch('http://192.168.1.45:3000/', {
+        fetch('http://192.168.1.45:3000/api', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
             },
-            body: JSON.stringify({year:year, month:month, day:day, weeks:weeks,
-                                    min:min, sec:sec, dist:dist})
+            body: JSON.stringify({year:year})
         })
-        .then(resp => resp.json())
-        .then(data => {
-            props.navigation.navigate('Home')
-        })
+        .then(response => response.json())
+        .then((responseJson) => console.log(responseJson))
         .catch(error => console.log(error))
     }
 
@@ -76,8 +73,8 @@ function Create(props) {
         textColor="white" 
         buttonColor='blue'
         mode = 'contained'
-        onPress = {() => createPlan}
-        >Create Plan </Button>
+        onPress = {() => createPlan()}
+        > Create Plan </Button>
 
     </View>
   )
