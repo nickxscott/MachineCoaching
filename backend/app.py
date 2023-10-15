@@ -15,7 +15,15 @@ Session(app)
 
 @app.route('/', methods=['GET','POST'])
 def get_cal():
-    result = get_calendar(race_year=2023, race_month=11, race_day=19, weeks=16, pace_min=7, pace_sec=10, race_dist=26.2)
+    race_year = int(request.json['year'])
+    race_month = int(request.json['month'])
+    race_day = int(request.json['day'])
+    weeks = int(request.json['weeks'])
+    pace_min = int(request.json['min'])
+    pace_sec = int(request.json['sec'])
+    race_dist = float(request.json['dist'])
+    result = get_calendar(race_year=race_year, race_month=race_month, race_day=race_day, weeks=weeks, pace_min=pace_min, pace_sec=pace_sec, race_dist=race_dist)
+    cal = result[0]
     raw_level = result[1]
     dist_level = result[2]
     z2 = pace_to_str(result[10])
@@ -23,7 +31,7 @@ def get_cal():
     hmp = pace_to_str(result[8])
     ten_k = pace_to_str(result[7])
     five_k = pace_to_str(result[6])
-    return jsonify(mp)
+    return result[0].to_json(orient='records', date_format='iso', date_unit='s')
 
 @app.route('/api', methods=['GET','POST'])
 def test():

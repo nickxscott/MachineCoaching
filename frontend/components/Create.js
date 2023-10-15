@@ -12,16 +12,17 @@ function Create(props) {
     const[dist, setDist] =  useState("")
 
     const createPlan = () => {
-        fetch('http://192.168.1.45:3000/api', {
+        fetch('http://192.168.1.45:3000/', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json'
             },
-            body: JSON.stringify({year:year})
+            body: JSON.stringify({year:year, month:month, day:day, weeks:weeks, min:min, sec:sec, dist:dist})
         })
         .then(response => response.json())
         .then((responseJson) => console.log(responseJson))
-        .catch(error => console.log(error))
+        .catch(error => console.log(error));
+        props.navigation.navigate('Plan');
     }
 
   return (

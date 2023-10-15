@@ -14,7 +14,7 @@ export default function Home(props) {
       style = {styles.fab}
       label = 'Start Training'
       icon='plus'
-      onPress = {() => props.navigation.navigate('Training')}
+      onPress = {() => props.navigation.navigate('Create')}
       />  
     </View>
   )
