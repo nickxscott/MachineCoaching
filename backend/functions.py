@@ -51,11 +51,11 @@ def get_calendar(race_year, race_month, race_day, weeks, pace_min, pace_sec, rac
     #calcluate meters per second (speed) from goal pace
     speed = mins_to_meters(m=pace_min, s=pace_sec)
     
-    race_date = date(race_year, race_month, race_day+1)
+    race_date = date(race_year, race_month, race_day)
     
     cal = weeks*7
     
-    date_list = [race_date - timedelta(days=x) for x in range(1,(cal+1))]
+    date_list = [(race_date + timedelta(days=1)) - timedelta(days=x) for x in range(1,(cal+1))]
     
     date_list.reverse()
     
