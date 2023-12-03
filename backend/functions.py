@@ -77,7 +77,7 @@ def get_calendar(race_year, race_month, race_day, weeks, pace_min, pace_sec, rac
     
     #find first monday and crop calendar down to start on first monday
     first_mon = df_training_cal[df_training_cal.day_code == 0].index[0]
-    df_training_cal = df_training_cal.iloc[first_mon:]
+    df_training_cal = df_training_cal.iloc[first_mon:].reset_index(drop=True)
     
     #create column for week count
     week = []

@@ -5,6 +5,11 @@ from flask_session import Session
 from functions import *
 import requests
 
+import os
+import dotenv
+from dotenv import load_dotenv
+import snowflake.connector
+
 #flask app
 app = Flask(__name__)
 app.secret_key = "thisisthesecretkey"
@@ -12,9 +17,12 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+load_dotenv('sf.env')
+
 
 @app.route('/', methods=['GET','POST'])
 def get_cal():
+
     race_year = int(request.json['year'])
     race_month = int(request.json['month'])
     race_day = int(request.json['day'])
@@ -22,21 +30,32 @@ def get_cal():
     pace_min = int(request.json['min'])
     pace_sec = int(request.json['sec'])
     race_dist = float(request.json['dist'])
+
     result = get_calendar(race_year=race_year, race_month=race_month, race_day=race_day, weeks=weeks, pace_min=pace_min, pace_sec=pace_sec, race_dist=race_dist)
-    cal = result[0]
-    raw_level = result[1]
-    dist_level = result[2]
-    z2 = pace_to_str(result[10])
-    mp = pace_to_str(result[9])
-    hmp = pace_to_str(result[8])
-    ten_k = pace_to_str(result[7])
-    five_k = pace_to_str(result[6])
+
+    #cal = result[0]
+    #raw_level = result[1]
+    #dist_level = result[2]
+    #z2 = pace_to_str(result[10])
+    #mp = pace_to_str(result[9])
+    #hmp = pace_to_str(result[8])
+    #ten_k = pace_to_str(result[7])
+    #five_k = pace_to_str(result[6])
+
+    #create sf connection
+    ctx = snowflake.connector.connect(
+        user=os.getenv('uid_snow'), 
+        password=os.getenv('pwd_snow'), 
+        account=os.getenv('account_snow'))
+
+    #insert plan into plans table and user_id/plan_id into user_plans table
+
     return result[0].to_json(orient='records', date_format='iso', date_unit='s')
 
-@app.route('/api', methods=['GET','POST'])
-def test():
-    x = request.json['year']
-    return jsonify(x)
+#@app.route('/api', methods=['GET','POST'])
+#def test():
+#    x = request.json['year']
+#    return jsonify(x)
 
 
 if __name__ == '__main__':
