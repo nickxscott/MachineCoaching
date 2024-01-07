@@ -8,21 +8,32 @@
                 <div class="card shadow-2-strong" style="border-radius: 1rem;">
                     <div class="card-body p-5 text-center">
                         <h3 class="mb-5">Sign in</h3>
-                        <div class="form-outline mb-4" method="POST">
-                            {{ form.email(class="form-control form-control-lg") }}
-                            <label class="form-label" for="typeEmailX-2">Email</label>
-                        </div>
-                        <div class="form-outline mb-2">
-                            {{ form.pwd(class="form-control form-control-lg") }}
-                            <label class="form-label" for="typePasswordX-2">Password</label>
-                        </div>
-                        <div class="col mb-4">
-                            <!-- Simple link -->
-                            <a href="#!">Forgot password?</a>
-                        </div>
-                        <div class='col'>
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
-                        </div>
+                        <form method='POST'>
+                            {{ form.csrf_token }}
+                            <div class="form-outline mb-4">
+                                {{ form.email(class="form-control form-control-lg") }}
+                                <label class="form-label" for="typeEmailX-2">Email</label>
+                            </div>
+                            <div class="form-outline mb-1">
+                                {{ form.pwd(class="form-control form-control-lg") }}
+                                <label class="form-label" for="typePasswordX-2">Password</label>
+                            </div>
+                            <div class="col mb-4">
+                                <!-- Simple link -->
+                                <a href="#!">Forgot password?</a>
+                            </div>
+                            <div class="col mb-4">
+                                <!-- Simple link -->
+                                <p> Don't have an account? <a href={{url_for('login.reg')}}>Click here</a></p>
+                            </div>
+                            <div class='col'>
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+                                {% for message in get_flashed_messages()%}
+                                    <p style='color: blue'> {{message}} </p>
+                                {% endfor %}
+                            </div>
+                            
+                        </form>
                     </div>
                 </div>
             </div>
