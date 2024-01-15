@@ -7,15 +7,14 @@ class loginForm(FlaskForm):
 	pwd=PasswordField("pwd", validators=[InputRequired(), Length(min=8, message='Too short')],render_kw={"placeholder": "Password"}) 
 
 class regForm(FlaskForm):
-	f_name = StringField("first", validators=[InputRequired()])
-	l_name = StringField("last", validators=[InputRequired()])
-	email = StringField("email", validators=[	InputRequired(), 
-												Email(	check_deliverability=True, 
-														message='Not a valid email address')],
-								render_kw={"placeholder": "Email Address"}) 
+	f_name = StringField("first", validators=[InputRequired(message='Must enter first name')], render_kw={"placeholder": "First Name"})
+	l_name = StringField("last", validators=[InputRequired(message='Must enter last name')], render_kw={"placeholder": "Last Name"})
+	email = StringField("email", validators=[InputRequired(),Email(	check_deliverability=True, message='Not a valid email address')],
+						render_kw={"placeholder": "Email Address"}) 
 	pwd=PasswordField(	"pwd", 
 						validators=[InputRequired(), 
-									Length(	min=8, 
-											message='Too short')], 
+									Length(	min=8, message='Too short')], 
 						render_kw={"placeholder": "Password"}) 
-	confirm_pwd = PasswordField('Confirm Password', validators=[InputRequired(), EqualTo('pwd', message='Both password fields must be equal!')])
+	confirm_pwd = PasswordField('Confirm Password', validators=[InputRequired(), EqualTo('pwd', message='Passwords must match')],
+								render_kw={"placeholder": "Confirm password"})
+	terms = BooleanField("terms", validators=[InputRequired(message='must agree to terms of service')])

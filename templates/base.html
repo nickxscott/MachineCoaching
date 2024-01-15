@@ -10,7 +10,9 @@
     <title>Login</title>
 </head>
 <body style='background-color: black'>
-    {% include 'headerBar.html' %}
+    {% if request.endpoint not in ['login.login', 'login.reg'] %}
+        {% include 'headerBar.html' %}
+    {% endif %}
     <div class="col" style="text-align: justify;">
         {% block content %}
 
