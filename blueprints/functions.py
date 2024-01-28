@@ -4,6 +4,12 @@ import numpy as np
 import pickle
 import random
 
+#db connection imports
+import psycopg2
+import os
+from dotenv import load_dotenv
+load_dotenv('pg.env')
+
 #athlete level model
 level_fn = 'models/athlete_level.sav'
 level = pickle.load(open(level_fn, 'rb'))
@@ -656,3 +662,50 @@ def get_calendar(race_year, race_month, race_day, weeks, pace_min, pace_sec, rac
     
     return df_training_cal, level_raw, dist_level, user_max, df_mileage, \
             speed, five_k, ten_k, hmp, mp, z2, long_runs, max_lr, peak_lr, lr_85pct, race_dist
+
+def check_user(username):
+    conn = psycopg2.connect(host=os.getenv('ENDPOINT'), 
+                            port=os.getenv('PORT'), 
+                            database=os.getenv('DBNAME'), 
+                            user=os.getenv('USER'), 
+                            password=os.getenv('PWD'))
+    cur = conn.cursor()
+    cur.execute("SELECT * \
+                FROM USERS \
+                    WHERE EMAIL = \'" + username + "'")
+    query_results = cur.fetchall()
+    if len(query_results)==1:
+        return True
+    else:
+        return False
+
+
+def get_user(username): 
+    conn = psycopg2.connect(host=os.getenv('ENDPOINT'), 
+                            port=os.getenv('PORT'), 
+                            database=os.getenv('DBNAME'), 
+                            user=os.getenv('USER'), 
+                            password=os.getenv('PWD'))
+    cur = conn.cursor()
+    cur.execute("SELECT * \
+                FROM USERS \
+                    WHERE EMAIL = \'" + username + "'")
+    query_results = cur.fetchall()
+    col_nms=[x.name for x in cur.description]
+    df=pd.DataFrame(query_results)
+    df.columns=col_nms
+    return df
+
+def new_user(first, last, email, hashed_pwd):
+    conn = psycopg2.connect(host=os.getenv('ENDPOINT'), 
+                            port=os.getenv('PORT'), 
+                            database=os.getenv('DBNAME'), 
+                            user=os.getenv('USER'), 
+                            password=os.getenv('PWD'))
+    cur = conn.cursor()
+    cur.execute("INSERT INTO USERS (USER_ID, FIRST_NAME, LAST_NAME, EMAIL, PWD, TERMS, CREATED) \
+                VALUES (DEFAULT, " +"'"+  first +"', '" + last +"', '"+ email +"', '"+ hashed_password +"', true, NOW());")
+    conn.commit()
+    
+    cur.close()
+    conn.close()
