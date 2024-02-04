@@ -25,3 +25,12 @@ def dashboard():
 	if request.method=='GET':
 		user=current_user
 	return render_template('/dashboard/test.html', user=user)
+
+@dashboard_bp.route('/logout', methods=['GET','POST'])
+@login_required
+def logout():
+	logout_user()
+    #flash('You have successfully logged yourself out.')
+	return redirect(url_for('login.login'))
+
+

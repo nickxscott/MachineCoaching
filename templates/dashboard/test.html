@@ -3,5 +3,6 @@
 {% block content %}
 <h1> This is a test page... </h1>
 <p>Welcome {{user.first}}</p>
+<a href={{url_for('dashboard.logout')}}><button type="button" class="btn btn-secondary">Logout</button></a>
 {% endblock %}
 

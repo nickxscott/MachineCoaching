@@ -39,10 +39,6 @@ def login():
 			hashed_password=df_user.pwd.values[0]
 	
 			if bcrypt.check_password_hash(hashed_password, pw):
-				#unique_id = userinfo_response["sub"]
-				#user_email = userinfo_response["email"]
-				#user_name = userinfo_response["name"]
-				#user = User(user_id, first, last, email)
 				user=User(	user_id=df_user.user_id.values[0], 
 							first=df_user.first_name.values[0], 
 							last=df_user.last_name.values[0], 
@@ -70,7 +66,6 @@ def reg():
 		return render_template('/login/register.html', form=form, error=False)
 
 	elif request.method=='POST' and form.validate_on_submit():
-
 		last = form.l_name.data
 		first = form.f_name.data
 		email = form.email.data
