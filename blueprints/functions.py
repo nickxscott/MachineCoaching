@@ -709,3 +709,6 @@ def new_user(first, last, email, hashed_pwd):
     
     cur.close()
     conn.close()
+
+def createList(r1, r2):
+    return [item for item in range(r1, r2+1)]

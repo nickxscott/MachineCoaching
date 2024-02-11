@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create Training Plan</h2>
+              <form method='POST' >
+              {{ form.csrf_token }}
+                <div class="form-outline mb-4">
+                  {{ form.date(class="form-control form-control-lg") }}
+                  <label class="form-label" for="form3Example1cg">Race Date</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  {{ form.dist(class="form-control form-control-lg") }}
+                  <label class="form-label" for="form3Example1cg">Race Distance</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  {{ form.weeks(class="form-control form-control-lg") }}
+                  <label class="form-label" for="form3Example3cg">How many weeks can you train?</label>
+                </div>
+
+                <h3> Goal Pace </h3>
+                <div class="d-inline-flex">
+                  <div class="input-group mb-4 d-flex justify-content-center flex-row">
+                        <div class='col mx-1 w-auto'>
+                          {{ form.pace_min(class="form-control form-control-lg w-auto") }}
+                        </div>
+                        <div class='col mx-1 w-auto'>
+                          <h3> : </h3>
+                        </div>
+                        <div class='col mx-1 w-auto'>
+                          {{ form.pace_sec(class="form-control form-control-lg w-auto") }}
+                        </div>
+                        <div class='col mx-1 w-auto'>
+                          <h3> / </h3>
+                      </div>               
+                      <div class='col mx-1 w-auto'>
+                        {{ form.units(class="form-control form-control-lg w-auto") }}
+                      </div> 
+                  </div>
+                </div>
+
+                
+
+                <div class="d-flex justify-content-center">
+                  <button type="submit"
+                    class="btn btn-primary btn-lg btn-block">Create Plan
+                  </button>
+                </div>
+                    {% if error == True %}
+                        {% for message in get_flashed_messages()%}
+                            <div class="alert alert-primary d-flex align-items-center mt-2" role="alert">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                  <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                                <div>
+                                    <b>{{message}} </b>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

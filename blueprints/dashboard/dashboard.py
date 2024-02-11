@@ -24,7 +24,17 @@ def load_user(user_id):
 def dashboard():
 	if request.method=='GET':
 		user=current_user
-	return render_template('/dashboard/test.html', user=user)
+	return render_template('/dashboard/dashboard.html', user=user)
+
+@dashboard_bp.route('/create', methods=['GET','POST'])
+@login_required
+def create():
+
+	form = planForm()
+
+	if request.method=='GET':
+		user=current_user
+	return render_template('/dashboard/create.html', user=user, form=form)
 
 @dashboard_bp.route('/logout', methods=['GET','POST'])
 @login_required
