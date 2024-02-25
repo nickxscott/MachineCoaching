@@ -12,6 +12,11 @@
               <form method='POST' >
               {{ form.csrf_token }}
                 <div class="form-outline mb-4">
+                  {{ form.name(class="form-control form-control-lg") }}
+                  <label class="form-label" for="form3Example3cg">What's the name of your race?</label>
+                </div>
+
+                <div class="form-outline mb-4">
                   {{ form.date(class="form-control form-control-lg") }}
                   <label class="form-label" for="form3Example1cg">Race Date</label>
                 </div>
@@ -46,8 +51,6 @@
                       </div> 
                   </div>
                 </div>
-
-                
 
                 <div class="d-flex justify-content-center">
                   <button type="submit"

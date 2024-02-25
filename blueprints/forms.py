@@ -2,7 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, SelectField, BooleanField, IntegerField, DateField, TimeField
 from wtforms.validators import InputRequired, Email, Length, EqualTo, NumberRange
 
-from .functions import createList
+from .functions import createList, createSec
 
 class loginForm(FlaskForm):
 	email = StringField("email", validators=[InputRequired()],render_kw={"placeholder": "Email Address"}) 
@@ -26,11 +26,12 @@ class planForm(FlaskForm):
 	dist = SelectField("distance", validators=[InputRequired(message='Must enter a race distance')],
 						choices=[(3.1, '5k'), (6.2, '10k'), (13.1, 'Half-Marathon'), (26.2, 'Marathon')])
 	weeks=SelectField("weeks", validators=[InputRequired()],
-						choices=createList(8,16))
+						choices=createList(8,16), default=12)
 	#pace = TimeField('pace', validators=[InputRequired()])
 	pace_min=SelectField("pace_min", validators=[InputRequired(message='Must enter a pace')],
-							choices=createList(2,12)) 
+							choices=createList(3,12), default=8) 
 	pace_sec = SelectField("pace_sec", validators=[InputRequired(message='Must enter a pace')],
-							choices=createList(0,59))
+							choices=createSec(0,59))
 	units = SelectField("units", validators=[InputRequired(message='Must enter a distance unit')],
 						choices=['mile', 'km'])
+	name = StringField("name", validators=[InputRequired()], render_kw={"placeholder": "Example: NYC Marathon"})

@@ -52,12 +52,13 @@ def pace_to_str(speed):
     return pace_str
 
 #function to date race date, number of weeks to train, and generate 
-def get_calendar(race_year, race_month, race_day, weeks, pace_min, pace_sec, race_dist):
+def get_calendar(date, weeks, pace_min, pace_sec, race_dist):
     
     #calcluate meters per second (speed) from goal pace
     speed = mins_to_meters(m=pace_min, s=pace_sec)
     
-    race_date = date(race_year, race_month, race_day)
+    #race_date = date(race_year, race_month, race_day)
+    race_date=date
     
     cal = weeks*7
     
@@ -712,3 +713,13 @@ def new_user(first, last, email, hashed_pwd):
 
 def createList(r1, r2):
     return [item for item in range(r1, r2+1)]
+
+def createSec(r1, r2):
+    temp = [item for item in range(r1, r2+1)]
+    result = []
+    for n in temp:
+        if n < 10:
+            result.append('0'+str(n))
+        else:
+            result.append(str(n))
+    return result
