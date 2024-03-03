@@ -41,8 +41,23 @@ def create():
 	elif request.method=='POST':
 
 		race_name=form.name.data
+
 		race_date=form.date.data
 		weeks=int(form.weeks.data)
+		#get race speed depending on units (km vs miles)
+		m=int(form.pace_min.data)
+		s=int(form.pace_sec.data)
+		speed=[]
+		if form.units.data=='km':
+			speed.append(minskm_to_meters(m=m, s=s))
+		else:
+			speed.append(mins_to_meters(m=m, s=s))	
+
+		race_dist=float(form.dist.data)
+		units=form.units.data
+		
+		result=get_calendar(date=race_date, weeks=weeks, speed=speed[0], race_dist=race_dist, units=units)
+		result[0].to_csv('test_cal.csv', index=False)
 
 		return render_template('/dashboard/planSubmit.html', 
 								user=user, 

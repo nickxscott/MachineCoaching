@@ -32,6 +32,13 @@ def mins_to_meters(m, s):
     metersps = 1609.34/seconds
     return metersps
 
+def minskm_to_meters(m, s):
+    base10_sec = round(s/60, 3)
+    base10_min = m+base10_sec
+    seconds = base10_min*60
+    metersps = 1000/seconds
+    return metersps
+
 def meters_to_mins(mps):
     sec_per_mile = round(1609.34/mps, 3)
     base10_min = sec_per_mile/60
@@ -39,23 +46,43 @@ def meters_to_mins(mps):
     sec = round(base10_min%1, 3)*60
     return mins, sec
 
-def pace_to_str(speed):
-    m, s = meters_to_mins(speed)
-    mins = str(m)+'\''
-    secs = []
-    if s < 10:
-        secs.append('0' + str(int(round(s, 0))))
-    else:
-        secs.append(str(int(round(s, 0))))
-    secs = secs[0]+'\'\'' 
-    pace_str = mins+secs  
-    return pace_str
+def meters_to_minskm(mps):
+    sec_per_mile = round(1000/mps, 3)
+    base10_min = sec_per_mile/60
+    mins = int(base10_min)
+    sec = round(base10_min%1, 3)*60
+    return mins, sec
+
+def pace_to_str(speed, unit):
+    if unit=='mile':
+        m, s = meters_to_mins(speed)
+        mins = str(m)+':'
+        secs = []
+        if s < 10:
+            secs.append('0' + str(int(round(s, 0))))
+        else:
+            secs.append(str(int(round(s, 0))))
+        secs = secs[0] 
+        pace_str = mins+secs+'/mile'
+        return pace_str
+    elif unit=='km':
+        m, s = meters_to_minskm(speed)
+        mins = str(m)+':'
+        secs = []
+        if s < 10:
+            secs.append('0' + str(int(round(s, 0))))
+        else:
+            secs.append(str(int(round(s, 0))))
+        secs = secs[0] 
+        pace_str = mins+secs+'/km'  
+        return pace_str
 
 #function to date race date, number of weeks to train, and generate 
-def get_calendar(date, weeks, pace_min, pace_sec, race_dist):
+def get_calendar(date, weeks, speed, race_dist, units):
     
     #calcluate meters per second (speed) from goal pace
-    speed = mins_to_meters(m=pace_min, s=pace_sec)
+    #speed = mins_to_meters(m=pace_min, s=pace_sec)
+    speed=speed
     
     #race_date = date(race_year, race_month, race_day)
     race_date=date
@@ -627,11 +654,11 @@ def get_calendar(date, weeks, pace_min, pace_sec, race_dist):
     
     ##PACE ASSIGNMENT##
     #paces as strings
-    z2_str=pace_to_str(z2)
-    mp_str=pace_to_str(mp)
-    hmp_str=pace_to_str(hmp)
-    tenk_str=pace_to_str(ten_k)
-    fivek_str=pace_to_str(five_k)
+    z2_str=pace_to_str(z2, unit=units)
+    mp_str=pace_to_str(mp, unit=units)
+    hmp_str=pace_to_str(hmp, unit=units)
+    tenk_str=pace_to_str(ten_k, unit=units)
+    fivek_str=pace_to_str(five_k, unit=units)
         
     pace = []
     for index, row in df_training_cal.iterrows():
@@ -654,12 +681,18 @@ def get_calendar(date, weeks, pace_min, pace_sec, race_dist):
                 pace.append(fivek_str + ' - ' + tenk_str)
         #lr workouts always at goal race pace. only apply to half and full
         elif row.run_type in ['long_workout', 'race']:
-            pace.append(pace_to_str(speed))
+            pace.append(pace_to_str(speed, unit=units))
         else:
             #pace='-' for rest days
             pace.append('-')
                  
     df_training_cal['pace'] = pace
+    
+    #create km column for distance
+    dist_km=[]
+    for index, row in df_training_cal.iterrows():
+        dist_km.append(round(row.distance*1.60934, 2))
+    df_training_cal['dist_km']=dist_km
     
     return df_training_cal, level_raw, dist_level, user_max, df_mileage, \
             speed, five_k, ten_k, hmp, mp, z2, long_runs, max_lr, peak_lr, lr_85pct, race_dist

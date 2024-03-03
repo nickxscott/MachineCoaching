@@ -1,0 +1,98 @@
+date,day_code,day_desc,week,phase,weekly_mileage,runs_per_week,distance,run_type,run_desc,run_name,pace,dist_km
+2024-01-01,0,Mon,1,base,21.6,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-02,1,Tues,1,base,21.6,4,4.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,7.24
+2024-01-03,2,Wed,1,base,21.6,4,5.5,workout,1.5 mile warm up followed by 10  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,10 x 1 minute hill sprints,7:05/mile,8.85
+2024-01-04,3,Thurs,1,base,21.6,4,4.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,7.24
+2024-01-05,4,Fri,1,base,21.6,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-06,5,Sat,1,base,21.6,4,7.2,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,11.59
+2024-01-07,6,Sun,1,base,21.6,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-08,0,Mon,2,base,32.4,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-09,1,Tues,2,base,32.4,5,5.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,8.53
+2024-01-10,2,Wed,2,base,32.4,5,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m,7:05/mile,9.25
+2024-01-11,3,Thurs,2,base,32.4,5,5.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,8.53
+2024-01-12,4,Fri,2,base,32.4,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-13,5,Sat,2,base,32.4,5,10.8,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,17.38
+2024-01-14,6,Sun,2,base,32.4,5,5.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,8.53
+2024-01-15,0,Mon,3,base,43.3,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-16,1,Tues,3,base,43.3,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-01-17,2,Wed,3,base,43.3,6,6.5,workout,1 mile warm up followd by 12 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,12 x 400,7:05/mile,10.46
+2024-01-18,3,Thurs,3,base,43.3,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-01-19,4,Fri,3,base,43.3,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-01-20,5,Sat,3,base,43.3,6,14.4,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,23.17
+2024-01-21,6,Sun,3,base,43.3,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-01-22,0,Mon,4,base,54.1,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-01-23,1,Tues,4,base,54.1,6,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-01-24,2,Wed,4,base,54.1,6,5.5,workout,1.5 mile warm up followed by 10  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,10 x 1 minute hill sprints,7:05/mile,8.85
+2024-01-25,3,Thurs,4,base,54.1,6,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-01-26,4,Fri,4,base,54.1,6,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-01-27,5,Sat,4,base,54.1,6,18.0,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,28.97
+2024-01-28,6,Sun,4,base,54.1,6,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-01-29,0,Mon,5,base,64.9,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.07
+2024-01-30,1,Tues,5,base,64.9,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.07
+2024-01-31,2,Wed,5,base,64.9,7,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m,7:05/mile,9.25
+2024-02-01,3,Thurs,5,base,64.9,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.07
+2024-02-02,4,Fri,5,base,64.9,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.07
+2024-02-03,5,Sat,5,base,64.9,7,21.7,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,34.92
+2024-02-04,6,Sun,5,base,64.9,7,7.5,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.07
+2024-02-05,0,Mon,6,peak,64.9,7,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-02-06,1,Tues,6,peak,64.9,7,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-02-07,2,Wed,6,peak,64.9,7,8.75,workout,1 mile warm-up followd by 3 reps of 2 miles with 2 minutes easy jogging in between. Finish with 1 mile cool down.,3 x 2 mile,6:11/mile - 6:28/mile,14.08
+2024-02-08,3,Thurs,6,peak,64.9,7,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-02-09,4,Fri,6,peak,64.9,7,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-02-10,5,Sat,6,peak,64.9,7,18.4,long_workout,"After a substantial warm-up, run 10km at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10k at race pace,7:05/mile,29.61
+2024-02-11,6,Sun,6,peak,64.9,7,7.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,12.23
+2024-02-12,0,Mon,7,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-02-13,1,Tues,7,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-02-14,2,Wed,7,peak,64.9,7,8.0,workout,1 mile warm-up followd by 6 reps of 1 mile with 90 seconds easy jogging in between.  Finish with 1 mile cool down.,6 x 1 mile,6:11/mile - 6:28/mile,12.87
+2024-02-15,3,Thurs,7,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-02-16,4,Fri,7,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-02-17,5,Sat,7,peak,64.9,7,20.0,long_workout,"After a substantial warm-up, run 10 miles at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10mi at race pace,7:05/mile,32.19
+2024-02-18,6,Sun,7,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-02-19,0,Mon,8,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-02-20,1,Tues,8,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-02-21,2,Wed,8,peak,64.9,7,7.5,workout,1 mile warm-up followd by 6 reps of 800m with 90 seconds easy jogging in between. Then 6 reps of 400m with 90 seconds easy jogging in between. Finish with 1 mile cool down.,"6 x 800, 6 x 400",6:11/mile - 6:28/mile,12.07
+2024-02-22,3,Thurs,8,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-02-23,4,Fri,8,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-02-24,5,Sat,8,peak,64.9,7,21.7,long_workout,"After a substantial warm-up, complete 3 sets of 5km at goal race pace with a minimum of 5 minutes recovery between sets",3 x 5k at race pace,7:05/mile,34.92
+2024-02-25,6,Sun,8,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-02-26,0,Mon,9,down,32.5,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-02-27,1,Tues,9,down,32.5,5,5.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,8.21
+2024-02-28,2,Wed,9,down,32.5,5,6.5,workout,1 mile warm up followd by 12 reps of 400m with 60 seconds easy jogging in between reps. Finish with 1 mile cool down,12 x 400,6:11/mile - 6:28/mile,10.46
+2024-02-29,3,Thurs,9,down,32.5,5,5.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,8.21
+2024-03-01,4,Fri,9,down,32.5,5,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-03-02,5,Sat,9,down,32.5,5,10.8,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,17.38
+2024-03-03,6,Sun,9,down,32.5,5,5.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,8.21
+2024-03-04,0,Mon,10,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-03-05,1,Tues,10,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-03-06,2,Wed,10,peak,64.9,7,7.25,workout,1 mile warm-up followed by 6 reps of 1k with 90 seconds easy jogging in between reps. Finish with 1 mile cool down.,7 x 1k,6:11/mile - 6:28/mile,11.67
+2024-03-07,3,Thurs,10,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-03-08,4,Fri,10,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-03-09,5,Sat,10,peak,64.9,7,20.6,long_workout,"After a substantial warm-up, complete 4 sets of 2mi at goal race pace with a minimum of 3 minutes recovery between sets",4 x 2mi at race pace,7:05/mile,33.15
+2024-03-10,6,Sun,10,peak,64.9,7,7.4,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.91
+2024-03-11,0,Mon,11,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-03-12,1,Tues,11,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-03-13,2,Wed,11,peak,64.9,7,8.75,workout,1 mile warm-up followd by 3 reps of 2 miles with 2 minutes easy jogging in between. Finish with 1 mile cool down.,3 x 2 mile,6:11/mile - 6:28/mile,14.08
+2024-03-14,3,Thurs,11,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-03-15,4,Fri,11,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-03-16,5,Sat,11,peak,64.9,7,20.6,long_workout,"After a substantial warm-up, run 10km at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10k at race pace,7:05/mile,33.15
+2024-03-17,6,Sun,11,peak,64.9,7,7.1,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,11.43
+2024-03-18,0,Mon,12,taper,55.2,7,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,10.14
+2024-03-19,1,Tues,12,taper,55.2,7,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,10.14
+2024-03-20,2,Wed,12,taper,55.2,7,5.5,workout,1.5 mile warm up followed by 10  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,10 x 1 minute hill sprints,6:11/mile - 6:28/mile,8.85
+2024-03-21,3,Thurs,12,taper,55.2,7,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,10.14
+2024-03-22,4,Fri,12,taper,55.2,7,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,10.14
+2024-03-23,5,Sat,12,taper,55.2,7,18.4,long_workout,"After a substantial warm-up, run 10 miles at goal race pace. Continue to cool down at an easy jogging pace until you've completed the total long run distance.",10mi at race pace,7:05/mile,29.61
+2024-03-24,6,Sun,12,taper,55.2,7,6.3,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,10.14
+2024-03-25,0,Mon,13,taper,42.2,6,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-03-26,1,Tues,13,taper,42.2,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-03-27,2,Wed,13,taper,42.2,6,5.75,workout,1 mile warm up followd by 6 reps of 800m with 90 seconds easy jogging in between reps. Finish with 1 mile cool down,6 x 800m,6:11/mile - 6:28/mile,9.25
+2024-03-28,3,Thurs,13,taper,42.2,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-03-29,4,Fri,13,taper,42.2,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-03-30,5,Sat,13,taper,42.2,6,14.1,long_run,"The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance",Long Run,8:35/mile,22.69
+2024-03-31,6,Sun,13,taper,42.2,6,5.6,easy,This run should be easy enough that you could carry on a conversation throughout the run.,Easy Day,8:35/mile,9.01
+2024-04-01,0,Mon,14,taper,19.5,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-04-02,1,Tues,14,taper,19.5,4,4.3,easy,"The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.                        This will allow you to maintain your top-end fitness as you taper toward race day.",Easy + Strides,8:35/mile,6.92
+2024-04-03,2,Wed,14,taper,19.5,4,4.0,workout,1.5 mile warm up followed by 5  reps of approximately 60 second hill sprints. Finish with 1.5 mile cool down,5 x 1 minute hill sprints,6:11/mile - 6:28/mile,6.44
+2024-04-04,3,Thurs,14,taper,19.5,4,4.3,easy,"The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.                        This will allow you to maintain your top-end fitness as you taper toward race day.",Easy + Strides,8:35/mile,6.92
+2024-04-05,4,Fri,14,taper,19.5,4,0.0,rest,This is a rest day. Prioritize relaxation and recovery.,Rest Day,-,0.0
+2024-04-06,5,Sat,14,taper,19.5,4,26.2,race,"Race day has arrived! Be patient, stick to your plan, and trust in your training. Good luck!",Race Day,7:05/mile,42.16
