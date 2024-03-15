@@ -747,5 +747,19 @@ def get_calendar(date, weeks, speed, race_dist, units):
         df_new=pd.DataFrame(df_new)
         df_training_cal = pd.concat([df_training_cal, df_new])
         
+    elif early['tf']==True:
+        #get race day data
+        race_data=df_training_cal.iloc[df_training_cal.index.stop-1]
+        #get race date and crop df down to appropriate day
+        i_race=df_training_cal.loc[df_training_cal.date==str(date)].index.values[0]
+        df_training_cal=df_training_cal.loc[:i_race]
+        #exchange last day data for race day data
+        df_training_cal.at[df_training_cal.index.stop-1, 'distance'] = race_data.distance
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_type'] = race_data.run_type
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_desc'] = race_data.run_desc
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_name'] = race_data.run_name
+        df_training_cal.at[df_training_cal.index.stop-1, 'pace'] = race_data.pace
+        df_training_cal.at[df_training_cal.index.stop-1, 'dist_km'] = race_data.dist_km
+        
     return df_training_cal, level_raw, dist_level, user_max, df_mileage, \
             speed, five_k, ten_k, hmp, mp, z2, long_runs, max_lr, peak_lr, lr_85pct, race_dist

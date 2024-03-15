@@ -747,5 +747,30 @@ def get_calendar(date, weeks, speed, race_dist, units):
         df_new=pd.DataFrame(df_new)
         df_training_cal = pd.concat([df_training_cal, df_new])
         
+    elif early['tf']==True:
+        #get race day data
+        race_data=df_training_cal.iloc[df_training_cal.index.stop-1]
+        #get race date and crop df down to appropriate day
+        i_race=df_training_cal.loc[df_training_cal.date==date].index.values[0]
+        df_training_cal=df_training_cal.loc[:i_race]
+        #exchange last day data for race day data
+        df_training_cal.at[df_training_cal.index.stop-1, 'distance'] = race_data.distance
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_type'] = race_data.run_type
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_desc'] = race_data.run_desc
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_name'] = race_data.run_name
+        df_training_cal.at[df_training_cal.index.stop-1, 'pace'] = race_data.pace
+        df_training_cal.at[df_training_cal.index.stop-1, 'dist_km'] = race_data.dist_km
+        #exchange workout wednesday for an easy day (based on tuesday of race week)
+        i_easy = df_training_cal.loc[df_training_cal.day_code==1].index.max()
+        easy=df_training_cal.loc[i_easy]
+        i_wo=df_training_cal.loc[df_training_cal.day_code==2].index.max()
+        
+        df_training_cal.at[i_wo, 'distance'] = easy.distance
+        df_training_cal.at[i_wo, 'run_type'] = easy.run_type
+        df_training_cal.at[i_wo, 'run_desc'] = easy.run_desc
+        df_training_cal.at[i_wo, 'run_name'] = easy.run_name
+        df_training_cal.at[i_wo, 'pace'] = easy.pace
+        df_training_cal.at[i_wo, 'dist_km'] = easy.dist_km
+        
     return df_training_cal, level_raw, dist_level, user_max, df_mileage, \
             speed, five_k, ten_k, hmp, mp, z2, long_runs, max_lr, peak_lr, lr_85pct, race_dist
