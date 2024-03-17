@@ -152,14 +152,14 @@ def get_calendar(date, weeks, speed, race_dist, units):
     #if level raw is outside range(1,10), bound to nearest level and assign to dist_level (used for max distance calc)
     user_X = pd.DataFrame({'speed': [speed], 'distance': [race_dist]})
     level_raw = level.predict(user_X)[0]
-    dist_level = []
+    #dist_level = []
     
     if level_raw < 1:
-        dist_level.append(1)
+        dist_level=1
     elif level_raw > 10:
-        dist_level.append(10)
+        dist_level=10
     else:
-        dist_level.append(level_raw)
+        dist_level=level_raw
         
     #calculate paces (to be used for workouts)
     b1 = level.coef_[0]
@@ -183,9 +183,10 @@ def get_calendar(date, weeks, speed, race_dist, units):
     elif race_dist == 26.2:
         mileage_max += 75
         
-    dist_factor = dist_model(dist_level[0]) 
-    
+    dist_factor = dist_model(dist_level) 
+
     user_max = mileage_max*dist_factor
+
     #user_max = mileage_max-(level_final[0]*3)
     
     #weekly mileage
@@ -266,7 +267,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
         max_lr += 18
     #for full-marathon, use linear model
     elif (race_dist == 26.2):
-        max_lr += lr_model(dist_level)[0]
+        max_lr += lr_model(dist_level)
     
     #max_lr = max_lr[0]
     lr_85pct = round(max_lr*0.85, 1)
@@ -412,9 +413,10 @@ def get_calendar(date, weeks, speed, race_dist, units):
     if race_dist >= 13.1:
         #filter workouts file to users distance
         df_user_wo=df_workouts.loc[df_workouts.race==race_dist]
+        df_user_wo.to_csv('user_workouts.csv', index=False)
         
-        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max) & (df_user_wo.workout_type=='workout')].index.tolist()
-        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max) & (df_user_wo.workout_type=='workout')].index.tolist()
+        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='midweek')].index.tolist()
+        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='midweek')].index.tolist()
         taper = df_user_wo.loc[(df_user_wo.phase == 'base') & (df_user_wo.dist_level_max<=5)].index.tolist()
     
         random.shuffle(easy)
@@ -432,7 +434,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
         #if level >= 5: base phase has weekly w/o + easy LR
         #peak phase has weekly w/o and hard LR
         if level_raw >= 5:
-            long = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max) & (df_user_wo.workout_type=='long_run')].index.tolist()
+            long = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='long_run')].index.tolist()
             random.shuffle(long)
             long_seq = long*4
             for index, row in df_training_cal.iterrows():           
@@ -523,8 +525,8 @@ def get_calendar(date, weeks, speed, race_dist, units):
         #filter workouts file to users distance
         df_user_wo=df_workouts.loc[df_workouts.race==race_dist]
         
-        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max)].index.tolist()
-        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max)].index.tolist()
+        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max)].index.tolist()
+        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max)].index.tolist()
         taper = df_user_wo.loc[(df_user_wo.phase == 'base') & (df_user_wo.dist_level_max<=5)].index.tolist()
     
         random.shuffle(easy)
@@ -751,7 +753,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
         #get race day data
         race_data=df_training_cal.iloc[df_training_cal.index.stop-1]
         #get race date and crop df down to appropriate day
-        i_race=df_training_cal.loc[df_training_cal.date==str(date)].index.values[0]
+        i_race=df_training_cal.loc[df_training_cal.date==date].index.values[0]
         df_training_cal=df_training_cal.loc[:i_race]
         #exchange last day data for race day data
         df_training_cal.at[df_training_cal.index.stop-1, 'distance'] = race_data.distance
@@ -760,6 +762,17 @@ def get_calendar(date, weeks, speed, race_dist, units):
         df_training_cal.at[df_training_cal.index.stop-1, 'run_name'] = race_data.run_name
         df_training_cal.at[df_training_cal.index.stop-1, 'pace'] = race_data.pace
         df_training_cal.at[df_training_cal.index.stop-1, 'dist_km'] = race_data.dist_km
+        #exchange workout wednesday for an easy day (based on tuesday of race week)
+        i_easy = df_training_cal.loc[df_training_cal.day_code==1].index.max()
+        easy=df_training_cal.loc[i_easy]
+        i_wo=df_training_cal.loc[df_training_cal.day_code==2].index.max()
+        
+        df_training_cal.at[i_wo, 'distance'] = easy.distance
+        df_training_cal.at[i_wo, 'run_type'] = easy.run_type
+        df_training_cal.at[i_wo, 'run_desc'] = easy.run_desc
+        df_training_cal.at[i_wo, 'run_name'] = easy.run_name
+        df_training_cal.at[i_wo, 'pace'] = easy.pace
+        df_training_cal.at[i_wo, 'dist_km'] = easy.dist_km
         
     return df_training_cal, level_raw, dist_level, user_max, df_mileage, \
             speed, five_k, ten_k, hmp, mp, z2, long_runs, max_lr, peak_lr, lr_85pct, race_dist

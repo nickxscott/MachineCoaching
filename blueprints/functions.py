@@ -81,12 +81,21 @@ def pace_to_str(speed, unit):
 def get_calendar(date, weeks, speed, race_dist, units):
     
     #calcluate meters per second (speed) from goal pace
-    #speed = mins_to_meters(m=pace_min, s=pace_sec)
     speed=speed
     
-    #race_date = date(race_year, race_month, race_day)
-    race_date=date
-    
+    #handle weekday races (move mon-wed races to previous sun, move thurs-fri races to upcoming Sat)
+    early={'mw':False, 'tf':False}
+    #move mon-wed race back to previous sunday
+    if date.weekday() <= 2:
+        race_date = date - timedelta(days=(date.weekday()+1))
+        early['mw']=True
+    #move thur and fri races to upcoming sat
+    elif date.weekday() in [3, 4]:
+        race_date= date + timedelta(days=(5-date.weekday()))
+        early['tf']=True
+    else:
+        race_date=date
+        
     cal = weeks*7
     
     date_list = [(race_date + timedelta(days=1)) - timedelta(days=x) for x in range(1,(cal+1))]
@@ -128,9 +137,9 @@ def get_calendar(date, weeks, speed, race_dist, units):
     #2 week taper for blocks under 14 weeks, 3 week taper for blocks >= 14 weeks
     block = 0
     if weeks < 14:
-        block += (df_training_cal.week.max() - 2)
+        block += (weeks - 2)
     if weeks >= 14:
-        block += (df_training_cal.week.max() - 3)
+        block += (weeks - 3)
     base = np.ceil(block*0.4)
     peak = np.floor(block*0.6)
 
@@ -144,19 +153,19 @@ def get_calendar(date, weeks, speed, race_dist, units):
         else:
             phase.append('taper')
     df_training_cal['phase']=phase
-    
+    df_training_cal.to_csv('weekday_race.csv', index=False)
     #calculate level and assign to level raw (used for pace calc)
     #if level raw is outside range(1,10), bound to nearest level and assign to dist_level (used for max distance calc)
     user_X = pd.DataFrame({'speed': [speed], 'distance': [race_dist]})
     level_raw = level.predict(user_X)[0]
-    dist_level = []
+    #dist_level = []
     
     if level_raw < 1:
-        dist_level.append(1)
+        dist_level=1
     elif level_raw > 10:
-        dist_level.append(10)
+        dist_level=10
     else:
-        dist_level.append(level_raw)
+        dist_level=level_raw
         
     #calculate paces (to be used for workouts)
     b1 = level.coef_[0]
@@ -180,9 +189,10 @@ def get_calendar(date, weeks, speed, race_dist, units):
     elif race_dist == 26.2:
         mileage_max += 75
         
-    dist_factor = dist_model(dist_level[0]) 
-    
+    dist_factor = dist_model(dist_level) 
+
     user_max = mileage_max*dist_factor
+
     #user_max = mileage_max-(level_final[0]*3)
     
     #weekly mileage
@@ -263,7 +273,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
         max_lr += 18
     #for full-marathon, use linear model
     elif (race_dist == 26.2):
-        max_lr += lr_model(dist_level)[0]
+        max_lr += lr_model(dist_level)
     
     #max_lr = max_lr[0]
     lr_85pct = round(max_lr*0.85, 1)
@@ -378,7 +388,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
             run_name.append('Rest Day')
         
         #plug in LR distance on saturdays
-        elif (row.day_code == 5) & (row.week != df_training_cal.week.max()):
+        elif (row.day_code == 5) & (row.week != df_training_cal.week.max()) & (early['mw']==False):
             lr_index = row.week - 1
             distance.append(round(long_runs[lr_index], 1))
             run_type.append('long_run')
@@ -409,9 +419,10 @@ def get_calendar(date, weeks, speed, race_dist, units):
     if race_dist >= 13.1:
         #filter workouts file to users distance
         df_user_wo=df_workouts.loc[df_workouts.race==race_dist]
+        df_user_wo.to_csv('user_workouts.csv', index=False)
         
-        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max) & (df_user_wo.workout_type=='workout')].index.tolist()
-        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max) & (df_user_wo.workout_type=='workout')].index.tolist()
+        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='midweek')].index.tolist()
+        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='midweek')].index.tolist()
         taper = df_user_wo.loc[(df_user_wo.phase == 'base') & (df_user_wo.dist_level_max<=5)].index.tolist()
     
         random.shuffle(easy)
@@ -429,7 +440,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
         #if level >= 5: base phase has weekly w/o + easy LR
         #peak phase has weekly w/o and hard LR
         if level_raw >= 5:
-            long = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max) & (df_user_wo.workout_type=='long_run')].index.tolist()
+            long = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='long_run')].index.tolist()
             random.shuffle(long)
             long_seq = long*4
             for index, row in df_training_cal.iterrows():           
@@ -520,8 +531,8 @@ def get_calendar(date, weeks, speed, race_dist, units):
         #filter workouts file to users distance
         df_user_wo=df_workouts.loc[df_workouts.race==race_dist]
         
-        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max)].index.tolist()
-        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level[0] > df_user_wo.dist_level_min) & (dist_level[0] < df_user_wo.dist_level_max)].index.tolist()
+        easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max)].index.tolist()
+        hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max)].index.tolist()
         taper = df_user_wo.loc[(df_user_wo.phase == 'base') & (df_user_wo.dist_level_max<=5)].index.tolist()
     
         random.shuffle(easy)
@@ -694,8 +705,84 @@ def get_calendar(date, weeks, speed, race_dist, units):
         dist_km.append(round(row.distance*1.60934, 2))
     df_training_cal['dist_km']=dist_km
     
+    #deal with weekday races
+    if early['mw']==True:
+        diff=date.weekday()+1
+        date_list = [(date + timedelta(days=1)) - timedelta(days=x) for x in range(1,(diff+1))]
+        date_list.reverse()
+        race_data=df_training_cal.iloc[df_training_cal.index.stop-1]
+        #exchange race day data for a repeat of the prior days run
+        df_training_cal.at[df_training_cal.index.stop-1, 'distance'] = df_training_cal.iloc[df_training_cal.index.stop-2].distance
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_type'] = df_training_cal.iloc[df_training_cal.index.stop-2].run_type
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_desc'] = df_training_cal.iloc[df_training_cal.index.stop-2].run_desc
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_name'] = df_training_cal.iloc[df_training_cal.index.stop-2].run_name
+        df_training_cal.at[df_training_cal.index.stop-1, 'pace'] = df_training_cal.iloc[df_training_cal.index.stop-2].pace
+        df_training_cal.at[df_training_cal.index.stop-1, 'dist_km'] = df_training_cal.iloc[df_training_cal.index.stop-2].dist_km
+        
+        df_new={}
+        for c in df_training_cal.columns:
+            df_new[c]=[]
+        for d in date_list:
+            if d != date_list[-1]:
+                df_new['date'].append(d)
+                df_new['day_code'].append(d.weekday())
+                df_new['day_desc'].append(df_weekdays.loc[df_weekdays.day_code==df_new['day_code'][-1]].day_desc.values[0])
+                df_new['week'].append(df_training_cal.week.max()+1)
+                df_new['phase'].append('taper')
+                df_new['weekly_mileage'].append(0)
+                df_new['runs_per_week'].append(0)
+                df_new['distance'].append(df_training_cal.iloc[df_training_cal.index.stop-2].distance)
+                df_new['run_type'].append(df_training_cal.iloc[df_training_cal.index.stop-2].run_type)
+                df_new['run_desc'].append(df_training_cal.iloc[df_training_cal.index.stop-2].run_desc)
+                df_new['run_name'].append(df_training_cal.iloc[df_training_cal.index.stop-2].run_name)
+                df_new['pace'].append(df_training_cal.iloc[df_training_cal.index.stop-2].pace)
+                df_new['dist_km'].append(df_training_cal.iloc[df_training_cal.index.stop-2].dist_km)
+            else:
+                df_new['date'].append(d)
+                df_new['day_code'].append(d.weekday())
+                df_new['day_desc'].append(df_weekdays.loc[df_weekdays.day_code==df_new['day_code'][-1]].day_desc.values[0])
+                df_new['week'].append(df_training_cal.week.max()+1)
+                df_new['phase'].append('taper')
+                df_new['weekly_mileage'].append(0)
+                df_new['runs_per_week'].append(0)
+                df_new['distance'].append(race_data.distance)
+                df_new['run_type'].append(race_data.run_type)
+                df_new['run_desc'].append(race_data.run_desc)
+                df_new['run_name'].append(race_data.run_name)
+                df_new['pace'].append(race_data.pace)
+                df_new['dist_km'].append(race_data.dist_km)
+                
+        df_new=pd.DataFrame(df_new)
+        df_training_cal = pd.concat([df_training_cal, df_new])
+        
+    elif early['tf']==True:
+        #get race day data
+        race_data=df_training_cal.iloc[df_training_cal.index.stop-1]
+        #get race date and crop df down to appropriate day
+        i_race=df_training_cal.loc[df_training_cal.date==date].index.values[0]
+        df_training_cal=df_training_cal.loc[:i_race]
+        #exchange last day data for race day data
+        df_training_cal.at[df_training_cal.index.stop-1, 'distance'] = race_data.distance
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_type'] = race_data.run_type
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_desc'] = race_data.run_desc
+        df_training_cal.at[df_training_cal.index.stop-1, 'run_name'] = race_data.run_name
+        df_training_cal.at[df_training_cal.index.stop-1, 'pace'] = race_data.pace
+        df_training_cal.at[df_training_cal.index.stop-1, 'dist_km'] = race_data.dist_km
+        #exchange workout wednesday for an easy day (based on tuesday of race week)
+        i_easy = df_training_cal.loc[df_training_cal.day_code==1].index.max()
+        easy=df_training_cal.loc[i_easy]
+        i_wo=df_training_cal.loc[df_training_cal.day_code==2].index.max()
+        
+        df_training_cal.at[i_wo, 'distance'] = easy.distance
+        df_training_cal.at[i_wo, 'run_type'] = easy.run_type
+        df_training_cal.at[i_wo, 'run_desc'] = easy.run_desc
+        df_training_cal.at[i_wo, 'run_name'] = easy.run_name
+        df_training_cal.at[i_wo, 'pace'] = easy.pace
+        df_training_cal.at[i_wo, 'dist_km'] = easy.dist_km
+        
     return df_training_cal, level_raw, dist_level, user_max, df_mileage, \
             speed, five_k, ten_k, hmp, mp, z2, long_runs, max_lr, peak_lr, lr_85pct, race_dist
+
 
 def check_user(username):
     conn = psycopg2.connect(host=os.getenv('ENDPOINT'), 
