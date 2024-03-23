@@ -18,6 +18,7 @@ lr_model = pickle.load(open(lr_fn, 'rb'))
 
 #load workouts
 df_workouts = pd.read_csv('../workouts/workouts.csv')
+df_runs = pd.read_csv('../workouts/runs.csv')
 
 def mins_to_meters(m, s):
     base10_sec = round(s/60, 3)
@@ -359,6 +360,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
     run_type = []
     run_desc = []
     run_name = []
+    run_id = []
 
     for index, row in df_training_cal.iterrows():    
         #if 4 runs per week, assign rest days to mon, fri, sun
@@ -367,6 +369,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
             run_type.append('rest')
             run_desc.append('This is a rest day. Prioritize relaxation and recovery.')
             run_name.append('Rest Day')
+            run_id.append(1)
     
         #if 5 runs per week, assign rest days to mon, fri
         elif (row.runs_per_week == 5) & (row.day_code in [0, 4]):
@@ -374,12 +377,14 @@ def get_calendar(date, weeks, speed, race_dist, units):
             run_type.append('rest')
             run_desc.append('This is a rest day. Prioritize relaxation and recovery.')
             run_name.append('Rest Day')
+            run_id.append(1)
         #if 6 runs per week, assign rest day to mon
         elif (row.runs_per_week == 6) & (row.day_code == 0):
             distance.append(0)
             run_type.append('rest')
             run_desc.append('This is a rest day. Prioritize relaxation and recovery.')
             run_name.append('Rest Day')
+            run_id.append(1)
         
         #plug in LR distance on saturdays
         elif (row.day_code == 5) & (row.week != df_training_cal.week.max()) & (early['mw']==False):
@@ -388,6 +393,7 @@ def get_calendar(date, weeks, speed, race_dist, units):
             run_type.append('long_run')
             run_desc.append('The goal of this run is to build endurance, not speed. Keep the effort easy and focus on completing the distance')
             run_name.append('Long Run')
+            run_id.append(4)
         #fill the rest with easy days
         else:
             lr_index = row.week - 1
@@ -396,24 +402,29 @@ def get_calendar(date, weeks, speed, race_dist, units):
             run_type.append('easy')
             run_desc.append('This run should be easy enough that you could carry on a conversation throughout the run.')
             run_name.append('Easy Day')
+            run_id.append(2)
 
         
     df_training_cal['distance'] = distance
     df_training_cal['run_type'] = run_type
     df_training_cal['run_desc'] = run_desc
     df_training_cal['run_name'] = run_name
+    df_training_cal['run_id'] = run_id
+    #create null column for workout_id. workouts assigned later
+    df_training_cal['workout_id']= None
     
     ##WORKOUT ASSIGNMENT##
     distance = df_training_cal.distance.tolist()
     run_type = df_training_cal.run_type.tolist()
     run_desc = df_training_cal.run_desc.tolist()
     run_name = df_training_cal.run_name.tolist()
+    run_id = df_training_cal.run_id.tolist()
+    workout_id = df_training_cal.workout_id.tolist()
 
     #if half-marathon or greater
     if race_dist >= 13.1:
         #filter workouts file to users distance
         df_user_wo=df_workouts.loc[df_workouts.race==race_dist]
-        df_user_wo.to_csv('user_workouts.csv', index=False)
         
         easy = df_user_wo.loc[(df_user_wo.phase == 'base') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='midweek')].index.tolist()
         hard = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='midweek')].index.tolist()
@@ -434,16 +445,17 @@ def get_calendar(date, weeks, speed, race_dist, units):
         #if level >= 5: base phase has weekly w/o + easy LR
         #peak phase has weekly w/o and hard LR
         if level_raw >= 5:
-            long = df_user_wo.loc[(df_user_wo.phase == 'speed') & (dist_level >= df_user_wo.dist_level_min) & (dist_level <= df_user_wo.dist_level_max) & (df_user_wo.workout_type=='long_run')].index.tolist()
+            long = df_user_wo.loc[(df_user_wo.phase == 'speed') & (df_user_wo.workout_type=='long_run')].index.tolist()
             random.shuffle(long)
             long_seq = long*4
             for index, row in df_training_cal.iterrows():           
                 if (row.phase in ['base', 'taper', 'down']) & (row.day_code == 2) & (row.week != df_training_cal.week.max()):
-                    #update wednesday run_type, desc, and dist with easy_seq
+                    #update wednesday run_type, desc, run_id and dist with easy_seq
                     distance[index]=df_user_wo.loc[easy_seq[easy_counter]]['distance']
                     run_type[index]='workout'
                     run_desc[index]=df_user_wo.loc[easy_seq[easy_counter]]['desc']
                     run_name[index]=df_user_wo.loc[easy_seq[easy_counter]]['name']
+                    workout_id[index]=df_user_wo.loc[easy_seq[easy_counter]]['workout_id']
                     easy_counter+=1
                 elif (row.phase == 'peak') & (row.day_code == 2):
                     #update wednesday run_type, desc, and dist with hard_seq
@@ -451,6 +463,8 @@ def get_calendar(date, weeks, speed, race_dist, units):
                     run_type[index]='workout'
                     run_desc[index]=df_user_wo.loc[hard_seq[hard_counter]]['desc']
                     run_name[index]=df_user_wo.loc[hard_seq[hard_counter]]['name']
+                    run_id[index]=3 #update run_id from easy to workout
+                    workout_id[index]=df_user_wo.loc[easy_seq[easy_counter]]['workout_id']
                     hard_counter+=1
                 #long run workouts from peak - 2 weeks out
                 elif (row.phase in ['peak', 'taper']) & (row.day_code == 5) & (row.week <= df_training_cal.week.max()-2):
@@ -458,6 +472,8 @@ def get_calendar(date, weeks, speed, race_dist, units):
                     run_type[index]='long_workout'
                     run_desc[index]=df_user_wo.loc[long_seq[long_counter]]['desc']
                     run_name[index]=df_user_wo.loc[long_seq[long_counter]]['name']
+                    run_id[index]=5 #update run_id from long run to long_workout
+                    workout_id[index]=df_user_wo.loc[long_seq[long_counter]]['workout_id']
                     long_counter+=1
                 #deal with final week
                 #add strides to easy days, make w/o lowest level, add race to race day
@@ -466,17 +482,21 @@ def get_calendar(date, weeks, speed, race_dist, units):
                         run_desc[index]='The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.\
                         This will allow you to maintain your top-end fitness as you taper toward race day.'
                         run_name[index]='Easy + Strides'
+                        run_id[index]=6 #update run_id from easy to easy with strides
                     elif row.day_code == 2:
                         distance[index]=df_user_wo.loc[taper_seq[0]]['distance']
                         run_type[index]='workout'
                         run_desc[index]=df_user_wo.loc[taper_seq[0]]['desc']
                         run_name[index]=df_user_wo.loc[taper_seq[0]]['name']
+                        workout_id[index]=df_user_wo.loc[taper_seq[0]]['workout_id']
+                        run_id[index]=3 #update run_id from easy to workout
                 #add race day to calendar
                 if row.date == df_training_cal.date.max():
                     run_type[index]='race'
                     run_desc[index]='Race day has arrived! Be patient, stick to your plan, and trust in your training. Good luck!'
                     run_name[index]='Race Day'
                     distance[index]=race_dist
+                    run_id[index]=7 #update run id to race day
                 else:
                     continue
                 
@@ -491,6 +511,8 @@ def get_calendar(date, weeks, speed, race_dist, units):
                     run_type[index]='workout'
                     run_desc[index]=df_user_wo.loc[hard_seq[hard_counter]]['desc']
                     run_name[index]=df_user_wo.loc[hard_seq[hard_counter]]['name']
+                    workout_id[index]=df_user_wo.loc[hard_seq[hard_counter]]['workout_id']
+                    run_id[index]=3
                     hard_counter+=1
                 elif (row.phase in ['taper', 'down']) & (row.day_code == 2) & (row.week != df_training_cal.week.max()):
                     #update wednesday run_type, desc, and dist with easy_seq
@@ -498,6 +520,8 @@ def get_calendar(date, weeks, speed, race_dist, units):
                     run_type[index]='workout'
                     run_desc[index]=df_user_wo.loc[easy_seq[easy_counter]]['desc']
                     run_name[index]=df_user_wo.loc[easy_seq[easy_counter]]['name']
+                    workout_id[index]=df_user_wo.loc[easy_seq[easy_counter]]['workout_id']
+                    run_id[index]=3
                     easy_counter+=1
                 #deal with final week
                 #add strides to easy days, make w/o lowest level, add race to race day
@@ -506,17 +530,21 @@ def get_calendar(date, weeks, speed, race_dist, units):
                         run_desc[index]='The majority of this run should be at your usual easy pace, but do 3-5 reps of 30-60 second efforts at your goal race pace in the final mile of the run.\
                         This will allow you to maintain your top-end fitness as you taper toward race day.'
                         run_name[index]='Easy + Strides'
+                        run_id[index]=6 #update run_id from easy to easy with strides
                     elif row.day_code == 2:
                         distance[index]=df_user_wo.loc[taper_seq[0]]['distance']
                         run_type[index]='workout'
                         run_desc[index]=df_user_wo.loc[taper_seq[0]]['desc']
                         run_name[index]=df_user_wo.loc[taper_seq[0]]['name']
+                        workout_id[index]=df_user_wo.loc[taper_seq[0]]['workout_id']
+                        run_id[index]=3 #update run_id from easy to workout
                 #add race day to calendar
                 if row.date == df_training_cal.date.max():
                     run_type[index]='race'
                     run_desc[index]='Race day has arrived! Be patient, stick to your plan, and trust in your training. Good luck!'
                     run_name[index]='Race Day'
                     distance[index]=race_dist
+                    run_id[index]=7 #update run id to race day
                 else:
                     continue
     

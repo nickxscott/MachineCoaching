@@ -34,4 +34,4 @@ class planForm(FlaskForm):
 							choices=createSec(0,59))
 	units = SelectField("units", validators=[InputRequired(message='Must enter a distance unit')],
 						choices=['mile', 'km'])
-	name = StringField("name", validators=[InputRequired()], render_kw={"placeholder": "Example: NYC Marathon"})
+	name = StringField("name", validators=[InputRequired(), Length(max=50, message='Race names must be less than 50 characters')], render_kw={"placeholder": "Example: NYC Marathon"})
